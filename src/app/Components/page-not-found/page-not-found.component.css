@@ -1,7 +1,6 @@
-.pageNotFoundHeightClass{
+.pageNotFoundHeightClass {
   height: 93.5vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
 }
