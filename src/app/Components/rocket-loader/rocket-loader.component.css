@@ -1,6 +1,6 @@
 body {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #fceb 100%, #fcebe7 70%, #fceb 100%);
+  background: linear-gradient(to bottom, #000 100%, #ccc 70%, #000 100%);
   overflow: hidden;
 }
 
