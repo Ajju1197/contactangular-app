@@ -12,6 +12,9 @@ import { ContactManagerComponent } from './Components/contact-manager/contact-ma
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { RocketLoaderComponent } from './Components/rocket-loader/rocket-loader.component';
+
 
 
 @NgModule({
@@ -23,13 +26,15 @@ import { FormsModule } from '@angular/forms';
     ViewContactComponent,
     SpinnerComponent,
     ContactManagerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RocketLoaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

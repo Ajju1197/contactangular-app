@@ -12,7 +12,21 @@ export class ContactManagerComponent implements OnInit {
   public loading: boolean = false;
   public contacts: IContact[] = []
   public errorMessage: string;
-  public filterData: Array<any> = []
+  public filterContacts: IContact[];
+  private _searchTerm: string;
+  get searchTerm() {
+    return this._searchTerm;
+  }
+  set searchTerm(value: string) {
+    this._searchTerm = value;
+    this.filterContacts = this.filterContactsFun(value);
+  }
+
+
+  // Data filter function
+  filterContactsFun(searchString: any) {
+    return this.contacts.filter(contact => contact.name.toLocaleLowerCase().indexOf(searchString.toLocaleLowerCase()) !== -1)
+  }
 
 
   constructor(private contactService: ContactService) { }
@@ -25,6 +39,7 @@ export class ContactManagerComponent implements OnInit {
     this.loading = true;
     this.contactService.getAllContacts().subscribe((data) => {
       this.contacts = data;
+      this.filterContacts = this.contacts;
       this.loading = false;
     }, (error) => {
       this.errorMessage = error;
@@ -39,6 +54,7 @@ export class ContactManagerComponent implements OnInit {
       this.errorMessage = error;
     })
   }
+
 
 
 }
