@@ -9,7 +9,7 @@ import { ViewContactComponent } from './Components/view-contact/view-contact.com
 import { WelcomePageComponent } from './Components/welcome-page/welcome-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/contacts/admin', pathMatch: 'full' },
+  { path: '', redirectTo: '/contacts/login', pathMatch: 'full' },
   { path: 'contacts/welcome', component: WelcomePageComponent },
   { path: 'contacts/login', component: LoginComponent },
   { path: 'contacts/admin', component: ContactManagerComponent },

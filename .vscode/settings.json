@@ -1,3 +1,5 @@
 {
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "netlify.api_token": "d05ed290-9ba7-42ca-b284-a3f0578cfa9d",
+  "netlify.site_id": "https://angularcrud-app.netlify.app/contacts/login"
 }

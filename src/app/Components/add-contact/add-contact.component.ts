@@ -29,7 +29,7 @@ export class AddContactComponent implements OnInit {
 
   public createContact() {
     this.contactService.createContact(this.contact).subscribe((data) => {
-      this._router.navigate(['/']).then();
+      this._router.navigate(['/contacts/admin']).then();
     }, (error) => {
       this.errorMessage = error
       this._router.navigate(['/contacts/add']).then();

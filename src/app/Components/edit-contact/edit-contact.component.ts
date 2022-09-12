@@ -39,7 +39,7 @@ export class EditContactComponent implements OnInit {
   public submitUpdate() {
     if (this.contactId) {
       this.contactService.updateContact(this.contact, this.contactId).subscribe((data) => {
-        this._router.navigate(['/']).then();
+        this._router.navigate(['/contacts/admin']).then();
       }, (error) => {
         this.errorMessage = error;
         this._router.navigate([`/contacts/edit/${this.contactId}`]).then();
