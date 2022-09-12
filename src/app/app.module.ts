@@ -11,9 +11,12 @@ import { SpinnerComponent } from './Components/spinner/spinner.component';
 import { ContactManagerComponent } from './Components/contact-manager/contact-manager.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { RocketLoaderComponent } from './Components/rocket-loader/rocket-loader.component';
+import { LoginComponent } from './Components/login/login.component';
+import { AuthService } from './Services/auth.service';
+import { WelcomePageComponent } from './Components/welcome-page/welcome-page.component';
 
 
 
@@ -27,7 +30,9 @@ import { RocketLoaderComponent } from './Components/rocket-loader/rocket-loader.
     SpinnerComponent,
     ContactManagerComponent,
     PageNotFoundComponent,
-    RocketLoaderComponent
+    RocketLoaderComponent,
+    LoginComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -35,8 +40,9 @@ import { RocketLoaderComponent } from './Components/rocket-loader/rocket-loader.
     HttpClientModule,
     FormsModule,
     Ng2SearchPipeModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

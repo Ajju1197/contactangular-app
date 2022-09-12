@@ -1,8 +1,13 @@
-<nav class="navbarComponentColorClass list-group-item-danger">
+<nav class="navbarComponentColorClass py-2">
   <div class="container">
     <div class="row">
       <div class="col my-2">
-        <a routerLink="/" class="navbar-brand"><i class="fa fa-mobile"></i> NG Contact Manager</a>
+        <a routerLink="/" class="navbar-brand"><i class="fa fa-mobile"></i>
+          NG Contact Manager
+        </a>
+      </div>
+      <div class="col text-end">
+        <a class="btn btn-primary" (click)="login()" #loginEl>{{loginTitle}}</a>
       </div>
     </div>
   </div>

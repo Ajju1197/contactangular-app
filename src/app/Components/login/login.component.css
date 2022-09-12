@@ -1,0 +1,25 @@
+.main-banner-image {
+  height: 92vh;
+  position: relative;
+}
+
+.main-banner-image img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.error {
+  color: red;
+}

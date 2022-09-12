@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { IContact } from 'src/app/Modals/IContact';
 import { ContactService } from 'src/app/Services/contact.service';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-contact-manager',
   templateUrl: './contact-manager.component.html',
   styleUrls: ['./contact-manager.component.css']
 })
-export class ContactManagerComponent implements OnInit {
+export class ContactManagerComponent implements OnInit, AfterViewInit {
 
   public loading: boolean = false;
   public contacts: IContact[] = []
@@ -28,11 +29,19 @@ export class ContactManagerComponent implements OnInit {
     return this.contacts.filter(contact => contact.name.toLocaleLowerCase().indexOf(searchString.toLocaleLowerCase()) !== -1)
   }
 
+  @ViewChild('loginEl')
+  loginVal: ElementRef;
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService, private loginService: LoginService, private rendrer: Renderer2) { }
 
   ngOnInit(): void {
     this.getAllContacts();
+  }
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    this.loginVal = this.loginService.loginElement;
+    this.rendrer.setProperty(this.loginVal.nativeElement, 'innerText', 'Logout')
   }
 
   public getAllContacts() {
