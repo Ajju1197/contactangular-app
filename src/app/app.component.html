@@ -1,6 +1,10 @@
 <app-navbar [bName]="brandName" (notifyMessage)="notify($event)">
 </app-navbar>
-<div class="container" style="position: absolute;top:19px;left:421px;">
-  <p style="color:white;">{{childData}}</p>
+<div class="container" style="position: absolute;top:19px;left:421px;width: 20%;white-space: nowrap;">
+  <div class="row">
+    <div class="col-lg-4">
+      <p style="color:white;">{{childData}}</p>
+    </div>
+  </div>
 </div>
 <router-outlet></router-outlet>

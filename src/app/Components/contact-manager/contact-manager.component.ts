@@ -65,6 +65,4 @@ export class ContactManagerComponent implements OnInit, AfterViewInit {
     })
   }
 
-
-
 }
