@@ -3,10 +3,14 @@
     <div class="row">
       <div class="col my-2">
         <a routerLink="/contacts/admin" class="navbar-brand"><i class="fa fa-mobile"></i>
-          NG Contact Manager
+          {{bName}}
         </a>
+        <a class="btn btn-danger ms-3" (click)="childMethod()">Child EVent</a>
       </div>
-      <div class="col text-end">
+      <div class="col text-end d-flex justify-content-end align-items-center">
+        <span class="me-4 bg-gray">{{ LoginTime | titlecase }}
+          {{ Date |
+          date:'medium'}}</span>
         <a class="btn btn-primary" (click)="login()" #loginEl>{{loginTitle}}</a>
       </div>
     </div>

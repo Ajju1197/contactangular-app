@@ -13,6 +13,13 @@ body {
 
 }
 
+.bg-gray {
+  padding: 5px;
+  background: #ccc;
+  color: #000;
+  font-size: 14px;
+}
+
 .list-group-item-danger {
   background: #a8c0ff;
   /* fallback for old browsers */

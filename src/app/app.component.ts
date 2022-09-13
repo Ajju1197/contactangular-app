@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Contact_App';
+  public childData: string;
+  public brandName: string = 'NG Contact Manager'
+  notify(data) {
+    this.childData = data
+  }
 }

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../login/login.service';
 
@@ -10,9 +10,16 @@ import { LoginService } from '../login/login.service';
 export class NavbarComponent implements OnInit, AfterViewInit {
 
   loginTitle = 'Login';
+  LoginTime = "Login Time"
+  Date: number = Date.now();;
   userName = '';
   @ViewChild('loginEl')
   loginVal!: ElementRef;
+  @Input() bName: string;
+  @Output() notifyMessage: EventEmitter<string> = new EventEmitter<string>();
+  childMethod() {
+    this.notifyMessage.emit('Data Passing to Child to parent')
+  }
 
   constructor(private loginService: LoginService, private router: Router, private rendrer: Renderer2) { }
 
@@ -35,6 +42,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
       this.loginTitle = 'Login';
       this.rendrer.setProperty(this.loginVal.nativeElement, 'innerText', 'Login');
       this.router.navigate(['/contacts/login'])
+      this.loginVal.nativeElement.style.background = '';
     }
   }
 

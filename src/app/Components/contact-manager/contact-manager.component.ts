@@ -42,6 +42,7 @@ export class ContactManagerComponent implements OnInit, AfterViewInit {
     //Add 'implements AfterViewInit' to the class.
     this.loginVal = this.loginService.loginElement;
     this.rendrer.setProperty(this.loginVal.nativeElement, 'innerText', 'Logout')
+    this.rendrer.setStyle(this.loginVal.nativeElement, 'background', 'black')
   }
 
   public getAllContacts() {
