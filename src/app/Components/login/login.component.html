@@ -8,16 +8,17 @@
     <div class="col-sm-3">
       <div class="card bg-white">
         <div class="panel panel-primary p-3">
-          <div class="panel-heading mb-2 text-dark">Login</div>
+          <div class="panel-heading mb-3 text-dark">Login</div>
           <div class="panel-body padding">
             <form class="form-horizontal" [formGroup]="loginForm">
-              <div class="form-group">
-                <label for="name" class="col-xs-4 control-label text-dark" style="text-align:left">User Name</label>
-                <div class="col-xs-5">
-                  <input type="text" class="form-control"
+              <div class="form-group mb-2">
+                <div class="col-xs-5 user-box">
+                  <input type="text"
                     [ngClass]="{'valid':loginForm.controls['userName'].valid, 'invalid':loginForm.controls['userName'].invalid && !loginForm.controls['userName'].pristine}"
-                    formControlName="userName">
-                  <div *ngIf="loginForm.controls['password'].errors && loginForm.controls['userName'].dirty">
+                    formControlName="userName" required="">
+                  <label for="name">User Name</label>
+                  <div *ngIf="loginForm.controls['password'].errors && loginForm.controls['userName'].dirty"
+                    style="position: absolute;bottom:0px;left:0px;">
                     <div *ngIf="loginForm.controls['userName'].errors?.['required']" style="color:red">UserName is
                       required
                     </div>
@@ -25,12 +26,13 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="password" class="col-xs-4 control-label text-dark" style="text-align:left">Password</label>
-                <div class="col-xs-5">
-                  <input type="password" class="form-control"
+                <div class="col-xs-5 user-box">
+                  <input type="password"
                     [ngClass]="{'valid':loginForm.controls['password'].valid, 'invalid':loginForm.controls['password'].invalid && !loginForm.controls['password'].pristine}"
-                    formControlName="password">
-                  <div *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].dirty">
+                    formControlName="password" required="">
+                  <label for="password">Password</label>
+                  <div *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].dirty"
+                    style="position: absolute;bottom:0px;left:0px;">
                     <div *ngIf="loginForm.controls['password'].errors?.['required']" style="color:red">Password is
                       required
                     </div>

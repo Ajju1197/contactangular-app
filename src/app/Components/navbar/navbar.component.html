@@ -8,10 +8,11 @@
         <a class="btn btn-danger ms-3" (click)="childMethod()">Child EVent</a>
       </div>
       <div class="col text-end d-flex justify-content-end align-items-center">
-        <span class="me-4 bg-gray">{{ LoginTime | titlecase }}
+        <span class="me-4 bg-gray" title="{{Date | date:'medium'}}">{{ LoginTime | titlecase }}
           {{ Date |
           date:'medium'}}</span>
-        <a class="btn btn-primary" (click)="login()" #loginEl>{{loginTitle}}</a>
+        <a [ngClass]="['btn', 'btn-primary']" (click)="login()" #loginEl>{{loginTitle}}</a>
+        <a class="btn btn-primary ms-3" routerLink="/add">Add Lazy</a>
       </div>
     </div>
   </div>
