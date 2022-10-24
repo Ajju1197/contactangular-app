@@ -20,6 +20,8 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   childMethod() {
     this.notifyMessage.emit('Data Passing to Child to parent')
   }
+  isDarkTheme: boolean = false;
+  showFiller = false;
 
   constructor(private loginService: LoginService, private router: Router, private rendrer: Renderer2) { }
 
@@ -44,6 +46,10 @@ export class NavbarComponent implements OnInit, AfterViewInit {
       this.router.navigate(['/contacts/login'])
       this.loginVal.nativeElement.style.background = '';
     }
+  }
+
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
   }
 
 }

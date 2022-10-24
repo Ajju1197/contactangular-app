@@ -17,6 +17,12 @@ import { RocketLoaderComponent } from './Components/rocket-loader/rocket-loader.
 import { LoginComponent } from './Components/login/login.component';
 import { AuthService } from './Services/auth.service';
 import { WelcomePageComponent } from './Components/welcome-page/welcome-page.component';
+import { UnsavedChangeGuard } from './Guards/unsaved-change.guard';
+import { AdminAccessGuardGuard } from './Guards/admin-access-guard.guard';
+import { AdminGuardGuard } from './Guards/admin-guard.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MeterialModule } from './meterial/meterial.module';
+
 
 
 
@@ -41,8 +47,10 @@ import { WelcomePageComponent } from './Components/welcome-page/welcome-page.com
     FormsModule,
     Ng2SearchPipeModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MeterialModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, UnsavedChangeGuard, AdminAccessGuardGuard, AdminGuardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

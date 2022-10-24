@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IContact } from 'src/app/Modals/IContact';
 import { ContactService } from 'src/app/Services/contact.service';
 import { LoginService } from '../login/login.service';
@@ -32,7 +34,7 @@ export class ContactManagerComponent implements OnInit, AfterViewInit {
   @ViewChild('loginEl')
   loginVal: ElementRef;
 
-  constructor(private contactService: ContactService, private loginService: LoginService, private rendrer: Renderer2) { }
+  constructor(private contactService: ContactService, private loginService: LoginService, private rendrer: Renderer2, private _router: Router) { }
 
   ngOnInit(): void {
     this.getAllContacts();

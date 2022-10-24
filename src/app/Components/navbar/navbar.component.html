@@ -1,19 +1,36 @@
-<nav class="navbarComponentColorClass py-2">
-  <div class="container">
-    <div class="row">
-      <div class="col my-2">
-        <a routerLink="/contacts/admin" class="navbar-brand"><i class="fa fa-mobile"></i>
-          {{bName}}
-        </a>
-        <a class="btn btn-danger ms-3" (click)="childMethod()">Child EVent</a>
-      </div>
-      <div class="col text-end d-flex justify-content-end align-items-center">
-        <span class="me-4 bg-gray" title="{{Date | date:'medium'}}">{{ LoginTime | titlecase }}
-          {{ Date |
-          date:'medium'}}</span>
-        <a [ngClass]="['btn', 'btn-primary']" (click)="login()" #loginEl>{{loginTitle}}</a>
-        <a class="btn btn-primary ms-3" routerLink="/add">Add Lazy</a>
+<mat-drawer-container autosize>
+  <div [ngClass]="isDarkTheme ? 'dark-theme' : 'light-theme'">
+    <div class="container">
+      <div class="row">
+        <div class="col my-2">
+          <a routerLink="/contacts/admin" class="navbar-brand"><i class="fa fa-mobile"></i>
+            {{bName}}
+          </a>
+          <a class="btn btn-danger ms-3" (click)="childMethod()">Child EVent</a>
+          <span class="ms-3 mt-2"><button mat-icon-button (click)="drawer.toggle()" class="example-icon"
+              aria-label="Example icon-button with menu icon">
+              <mat-icon>menu</mat-icon>
+            </button></span>
+        </div>
+        <div class="col text-end d-flex justify-content-end align-items-center">
+          <span class="me-4" title="{{Date | date:'medium'}}">{{ LoginTime | titlecase }}
+            {{ Date |
+            date:'medium'}}</span>
+          <a [ngClass]="['btn', 'btn-primary']" (click)="login()" #loginEl>{{loginTitle}}</a>
+          <a class="btn btn-primary ms-3" routerLink="/add">Add Lazy</a>
+          <span class="ms-3 p-2" [ngClass]="isDarkTheme ? 'light-theme' : 'dark-theme'">
+            <mat-slide-toggle (click)="toggleTheme()"></mat-slide-toggle>
+          </span>
+        </div>
       </div>
     </div>
   </div>
-</nav>
+</mat-drawer-container>
+<mat-drawer #drawer class="example-sidenav example-menu" cdkMenu mode="side">
+  <button class="example-menu-item" cdkMenuItem>Inbox</button>
+  <button class="example-menu-item" cdkMenuItem>Snoozed</button>
+  <button class="example-menu-item" cdkMenuItem>Important</button>
+  <button class="example-menu-item" cdkMenuItem>Sent</button>
+  <button class="example-menu-item" cdkMenuItem>Drafts</button>
+  <button class="example-menu-item" cdkMenuItem>All Mail</button>
+</mat-drawer>

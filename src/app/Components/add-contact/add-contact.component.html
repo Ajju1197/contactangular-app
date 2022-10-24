@@ -38,7 +38,8 @@
     <div class="col-sm-4">
       <form (ngSubmit)="createContact()">
         <div class="mb-2">
-          <input [(ngModel)]="contact.name" name="name" type="text" class="form-control" placeholder="Name">
+          <input [(ngModel)]="contact.name" name="name" type="text" class="form-control" [formControl]="name"
+            placeholder="Name">
         </div>
         <div class="mb-2">
           <input [(ngModel)]="contact.photo" name="photo" type="text" class="form-control" placeholder="Photo Url">
