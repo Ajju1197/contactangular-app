@@ -16,8 +16,8 @@
           <span class="me-4" title="{{Date | date:'medium'}}">{{ LoginTime | titlecase }}
             {{ Date |
             date:'medium'}}</span>
-          <a [ngClass]="['btn', 'btn-primary']" (click)="login()" #loginEl>{{loginTitle}}</a>
-          <a class="btn btn-primary ms-3" routerLink="/add">Add Lazy</a>
+          <a [ngClass]="['btn', 'btn-primary']" (click)="login()" title="{{loginTitle}}" #loginEl>{{loginTitle}}</a>
+          <a class="btn btn-primary ms-3" routerLink="/contacts/admin/add">Add Lazy</a>
           <span class="ms-3 p-2" [ngClass]="isDarkTheme ? 'light-theme' : 'dark-theme'">
             <mat-slide-toggle (click)="toggleTheme()"></mat-slide-toggle>
           </span>

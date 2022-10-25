@@ -50,15 +50,16 @@ export class ContactManagerComponent implements OnInit, AfterViewInit {
   public getAllContacts() {
     this.loading = true;
     this.contactService.getAllContacts().subscribe((data) => {
+      console.log(data)
       this.contacts = data;
+      console.log(this.contacts)
       this.filterContacts = this.contacts;
       this.loading = false;
     }, (error) => {
       this.errorMessage = error;
       this.loading = false
-    })
+    });
   }
-
   public deleteContact(contactId: string | undefined) {
     this.contactService.deleteContact(contactId).subscribe((data) => {
       this.getAllContacts();

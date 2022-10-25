@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
+    this.loginVal.nativeElement.style.color = "White"
     this.loginService.username = this.userName;
     this.loginService.loginElement = this.loginVal;
     console.log(this.loginVal);
@@ -39,6 +40,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     this.loginTitle = '';
     if (value === 'Login') {
       this.router.navigate(['/contacts/login'])
+      this.loginTitle = 'Logout';
     } else if (value === 'Logout') {
       sessionStorage.clear();
       this.loginTitle = 'Login';
